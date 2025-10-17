@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Minecraft 1.21.94 — Özel İndirme Sayfası</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent1:#6ee7b7; --accent2:#60a5fa; --glass: rgba(255,255,255,0.04);
+      --muted:rgba(255,255,255,0.6);
+      --radius:14px;
+      --maxw:980px;
+      --ff: 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:var(--ff); background: radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.08), transparent),
+        radial-gradient(1000px 500px at 90% 90%, rgba(110,231,183,0.04), transparent), var(--bg); color:#fff; -webkit-font-smoothing:antialiased;
+      padding:32px; display:flex; align-items:center; justify-content:center;
+    }
+
+    .wrap{width:100%; max-width:var(--maxw)}
+    header{display:flex; align-items:center; gap:16px; margin-bottom:18px}
+    .logo{width:64px; height:64px; border-radius:12px; background:linear-gradient(135deg,var(--accent2),var(--accent1)); display:grid; place-items:center; font-weight:700; color:#062434; font-size:18px}
+    h1{font-size:20px; margin:0}
+    p.lead{margin:2px 0 0; color:var(--muted); font-size:13px}
+
+    .grid{display:grid; grid-template-columns: 1fr 360px; gap:20px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius:var(--radius); padding:18px; box-shadow: 0 6px 20px rgba(2,6,23,0.6);} 
+
+    .hero{display:flex; flex-direction:column; gap:12px}
+    .screenshot{height:200px; border-radius:10px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); display:flex; align-items:center; justify-content:center}
+    .screenshot img{width:100%; height:100%; object-fit:cover}
+
+    .badges{display:flex; gap:8px; flex-wrap:wrap}
+    .badge{background:var(--glass); padding:8px 10px; border-radius:999px; font-size:13px}
+
+    .meta{display:flex; gap:12px; margin-top:8px}
+    .meta .m{background:#06121a; padding:10px; border-radius:10px; min-width:96px; text-align:center}
+    .m strong{display:block; font-size:16px}
+    .m small{color:var(--muted)}
+
+    .right{position:relative}
+    .download-panel{position:sticky; top:32px}
+    .dl-title{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .price{color:var(--muted); font-size:13px}
+
+    .buttons{display:flex; gap:10px; margin-top:12px}
+    .btn{flex:1; padding:12px 14px; border-radius:12px; border:0; cursor:pointer; font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent1)); color:#062434}
+    .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,0.06); color:var(--muted)}
+
+    .note{font-size:13px; color:var(--muted); margin-top:10px}
+
+    .specs{display:grid; gap:8px; margin-top:12px}
+    .spec{display:flex; justify-content:space-between; color:var(--muted)}
+
+    footer{margin-top:16px; font-size:13px; color:var(--muted); text-align:center}
+
+    /* modal */
+    .modal-back{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(2,6,23,0.6); z-index:50}
+    .modal{background:#071126; border-radius:16px; padding:18px; width:92%; max-width:520px}
+    .modal h3{margin:0 0 8px}
+
+    /* small screens */
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr;}
+      .right{order:-1}
+      .download-panel{position:static}
+      body{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">MC</div>
+      <div>
+        <h1>Minecraft 1.21.94 — İndirme Sayfası (Tek HTML Dosya)</h1>
+        <p class="lead">Güzel bir tek sayfa (single-file) arayüz. Gerçek oyun dosyası içermez — indirme örneği oluşturur.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main class="card hero">
+        <div class="screenshot" aria-hidden="true">
+          <!-- placeholder görsel: basit SVG -->
+          <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#60a5fa" stop-opacity="0.18" />
+                <stop offset="1" stop-color="#6ee7b7" stop-opacity="0.12" />
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="#061a2a" />
+            <rect x="40" y="40" width="1120" height="520" rx="8" fill="url(#g)" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="rgba(255,255,255,0.12)" font-size="42">Minecraft 1.21.94 Preview</text>
+          </svg>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px">
+          <div>
+            <div class="badges">
+              <div class="badge">Sürüm: 1.21.94</div>
+              <div class="badge">Boyut: ~1.2 GB (örnek)</div>
+              <div class="badge">Güncellendi: 2025</div>
+            </div>
+            <div class="meta">
+              <div class="m"><strong>Windows</strong><small>64-bit</small></div>
+              <div class="m"><strong>Mac</strong><small>Intel/Apple</small></div>
+              <div class="m"><strong>Mobil</strong><small>Android</small></div>
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-weight:700; font-size:18px">Resmi Değil</div>
+            <div class="price">Bu sayfa sadece örnek tasarımdır.</div>
+          </div>
+        </div>
+
+        <section style="margin-top:14px">
+          <h3 style="margin:0 0 6px">Özellikler</h3>
+          <ul style="margin:0 0 6px 18px; color:var(--muted)">
+            <li>Tek dosya — HTML+CSS+JS içinde tüm arayüz</li>
+            <li>Hızlı test indirme (placeholder .zip oluşturur)</li>
+            <li>Mobil uyumlu, temiz UI</li>
+          </ul>
+
+          <div class="specs">
+            <div class="spec"><span>Minimum İşletim Sistemi</span><span class="muted">Windows 10 / macOS 10.14</span></div>
+            <div class="spec"><span>RAM</span><span class="muted">4 GB+</span></div>
+            <div class="spec"><span>Depolama</span><span class="muted">2 GB boş alan</span></div>
+          </div>
+        </section>
+
+        <section style="margin-top:12px">
+          <h3 style="margin:0 0 6px">Nasıl Kullanılır</h3>
+          <ol style="margin:0 0 8px 18px; color:var(--muted)">
+            <li>Butona tıkla — örnek bir .zip dosyası oluşturup indirir.</li>
+            <li>Gerçek oyun dosyasını kullanmak istersen, sunucuna yükleyip <code>downloadBlob()</code> içindeki placeholder'ı değiştir.</li>
+          </ol>
+        </section>
+
+      </main>
+
+      <aside class="right">
+        <div class="card download-panel">
+          <div class="dl-title">
+            <div>
+              <div style="font-weight:700">İndir: Minecraft 1.21.94</div>
+              <div class="price">Hazır dosya yerine örnek indirme oluşturulur.</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-weight:700">Tek tık</div>
+              <div style="color:var(--muted); font-size:12px">Güvenli test</div>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button class="btn btn-primary" id="dl-win">Windows İndir</button>
+            <button class="btn btn-ghost" id="dl-mac">Mac İndir</button>
+          </div>
+
+          <div class="buttons" style="margin-top:8px">
+            <button class="btn btn-ghost" id="dl-android">Android İndir</button>
+            <button class="btn btn-ghost" id="open-github">GitHub'a Kopyala</button>
+          </div>
+
+          <div class="note">Not: Bu sayfa gerçek Minecraft dosyalarını barındırmaz ve telif hakkı ihlali oluşturabilecek içerik paylaşmaz. Gerçek dosyaları dağıtmadan önce lisansları kontrol edin.</div>
+
+          <div style="margin-top:12px">
+            <strong>Sistem Kontrolü</strong>
+            <div style="margin-top:8px" id="sys-check">Tarama bekleniyor...</div>
+            <div style="margin-top:10px; font-size:13px; color:var(--muted)">Boyut ve indirme hızını burada gösterebilirsiniz.</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0 0 8px">Yasal & Bilgilendirme</h4>
+          <p style="margin:0; color:var(--muted); font-size:13px">Bu tasarım örnektir. Gerçek oyun kopyalarını dağıtmayın. İndirme butonları test amaçlıdır ve placeholder dosya çıkarır.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>Bu dosyayı <strong>kaydet</strong> ve tarayıcında aç: <code>minecraft-1-21-94-singlepage.html</code></footer>
+  </div>
+
+  <!-- modal -->
+  <div class="modal-back" id="modal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h3 id="modal-title">İndirme</h3>
+      <p id="modal-msg">İndirme başlatılıyor...</p>
+      <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:12px">
+        <button onclick="closeModal()" class="btn btn-ghost">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Basit sistem kontrolü (kullanıcı tarafında tahmini bilgileri gösterir)
+    function detectSystem(){
+      const ua = navigator.userAgent || '';
+      const platform = navigator.platform || 'Unknown';
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(ua);
+      return { ua, platform, isMobile };
+    }
+
+    function showSys(){
+      const s = detectSystem();
+      const el = document.getElementById('sys-check');
+      el.innerHTML = `<div style="font-size:13px">Platform: <strong>${escapeHtml(s.platform)}</strong></div><div style="font-size:13px">Tarayıcı: <strong>${escapeHtml(navigator.appVersion.split(')')[0])}</strong></div><div style="font-size:13px">Mobil: <strong>${s.isMobile? 'Evet' : 'Hayır'}</strong></div>`;
+    }
+
+    function escapeHtml(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // Modal
+    const modal = document.getElementById('modal');
+    function openModal(title,msg){ document.getElementById('modal-title').textContent = title; document.getElementById('modal-msg').textContent = msg; modal.style.display = 'flex'; }
+    function closeModal(){ modal.style.display = 'none'; }
+
+    // Örnek 'indirme' - placeholder zip dosyası oluşturur
+    function downloadBlob(filename){
+      // Gerçek dosya indirmek isterseniz: fetch(url) ve response.blob() kullanın
+      const text = `Bu bir örnek indirme dosyasıdır. Dosya adı: ${filename}\nOluşturulma: ${new Date().toLocaleString()}`;
+      const blob = new Blob([text], {type:'application/zip'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = filename; document.body.appendChild(a);
+      a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),2000);
+    }
+
+    // Etkileşim
+    document.getElementById('dl-win').addEventListener('click', ()=>{
+      openModal('İndirme', 'Windows için örnek indirme başlatılıyor...');
+      setTimeout(()=>{ downloadBlob('Minecraft_1.21.94_windows_sample.zip'); closeModal(); }, 800);
+    });
+    document.getElementById('dl-mac').addEventListener('click', ()=>{
+      openModal('İndirme', 'Mac için örnek indirme başlatılıyor...');
+      setTimeout(()=>{ downloadBlob('Minecraft_1.21.94_mac_sample.zip'); closeModal(); }, 800);
+    });
+    document.getElementById('dl-android').addEventListener('click', ()=>{
+      openModal('İndirme', 'Android için örnek indirme başlatılıyor...');
+      setTimeout(()=>{ downloadBlob('Minecraft_1.21.94_android_sample.zip'); closeModal(); }, 800);
+    });
+
+    // GitHub'a Kopyala: kullanıcının HTML'i indirmesini sağlar
+    document.getElementById('open-github').addEventListener('click', ()=>{
+      openModal('GitHub Hazırlığı', 'HTML dosyanızın kopyasını indirin ve GitHub reposuna yükleyin.');
+      setTimeout(()=>{ downloadBlob('minecraft-1-21-94-singlepage.html'); closeModal(); }, 600);
+    });
+
+    // sayfa yüklendiğinde
+    showSys();
+
+    // Eğer gerçek dosya sunucunuz varsa örnek değişiklik:
+    // fetch('/files/mc-1.21.94.zip').then(r=>r.blob()).then(b=>{ const url=URL.createObjectURL(b); ... })
+  </script>
+</body>
+</html>
